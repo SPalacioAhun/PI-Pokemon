@@ -25,62 +25,62 @@ const getPokemonsApi = async () => {
     });
 
     const getAllPokemon = await Promise.all(dataPokemon);
-    return getAllPokemon
+    return getAllPokemon;
   } catch (error) {
     throw new Error(error.message);
-  } 
+  }
 };
 
-
 const getPokemonsDb = async () => {
-    const allPokemonsDb = await Pokemon.findAll({
-     //busco en la tabla los modelos que necesito
-        include: {
-            model: Type,
-            atributes: ["name"],
-        },
-    });
-    const mapPoke = allPokemonsDb.map((e) => {
-      return {
-        id: e.id,
-        name: e.name,
-        image: e.image,
-        types: e.types.map((e) => e.name),
-        hp: e.hp,
-        attack: e.attack,
-        defense: e.defense,
-        speed: e.speed,
-        height: e.height,
-        weight: e.weight,
-        createdInDb: e.createdInDb,
-      };  
-    });
-    return mapPoke;
+  const allPokemonsDb = await Pokemon.findAll({
+    //busco en la tabla los modelos que necesito
+    include: {
+      model: Type,
+      atributes: ["name"],
+    },
+  });
+  const mapPoke = allPokemonsDb.map((e) => {
+    return {
+      id: e.id,
+      name: e.name,
+      image: e.image,
+      types: e.Types.map((e) => e.name),
+      hp: e.hp,
+      attack: e.attack,
+      defense: e.defense,
+      speed: e.speed,
+      height: e.height,
+      weight: e.weight,
+      createdInDb: e.createdInDb,
+    };
+  });
+  return mapPoke;
 };
 
 const getAllPokemons = async (name) => {
- const pokemonsDb = await getPokemonsDb();
- const pokemonsApi = await getPokemonsApi();
- const allPokemon = pokemonsDb.concat(pokemonsApi);
+  //console.log('estoy en el controller', name);
+  const pokemonsDb = await getPokemonsDb();
+  const pokemonsApi = await getPokemonsApi();
+  const allPokemon = pokemonsDb.concat(pokemonsApi);
 
- let pokemonName;
- if(name) {
+  let pokemonName;
+  if (name) {
     pokemonName = allPokemon.filter(
       (e) => e.name.toLowerCase().includes(name.toLowerCase())
     );
-    if(pokemonName.length) return pokemonName;
-    throw new Error("No se encontro ningun pokemon ese nombre");
- };
- return allPokemon;
+    if (pokemonName.length) return pokemonName;
+    throw new Error("No se encontro ningun pokemon con ese nombre");
+  }
+  return allPokemon;
 };
 
 const getPokemonsById = async (idPokemon) => {
   const all = await getAllPokemons();
   const byId = await all.filter((e) => String(e.id) === idPokemon);
-  if(byId.length) {
+  if (byId.length) {
     return byId;
   } else {
-    throw new Error(`Pokemon no encontrado, id: ${idPokemon} incorrecto`)
+    throw new Error(`Pokemon no encontrado, id: ${idPokemon} incorrecto`);
   }
 };
 
@@ -110,16 +110,13 @@ const createPokemon = async (
       createdInDb,
     },
   });
-  if(!created) throw new Error("Este pokemon ya existe en la DB");
+  if (!created) throw new Error("Este pokemon ya existe en la DB");
   const typesDb = await Type.findAll({ where: { name: types } });
 
   pokemon.addTypes(typesDb);
 
   return pokemon;
 };
-
-
-
 
 module.exports = {
   getPokemonsApi,

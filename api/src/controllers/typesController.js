@@ -5,10 +5,10 @@ const getTypesApi = async () => {
   let allTypes = [];
 
   const infoApi = await axios.get("https://pokeapi.co/api/v2/type");
-  const resultApai = await infoApi.data.results;
+  const resultApi = await infoApi.data.results;
 
-  resultApai.map((e) => allTypes.push(e.name));
-
+  resultApi.map((e) => allTypes.push(e.name));
+  //extraigo los typos y lo guardo en el arreglo types
   await Promise.all(
     allTypes.map((type) => Type.findOrCreate({ where: { name: type } }))
   );
@@ -16,7 +16,6 @@ const getTypesApi = async () => {
   return typesDb;
 };
 
-
 module.exports = {
-   getTypesApi
+  getTypesApi
 };

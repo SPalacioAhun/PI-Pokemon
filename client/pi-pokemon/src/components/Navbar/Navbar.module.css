@@ -1,0 +1,157 @@
+.navContainer {
+    background-color: rgb(39, 39, 39);
+    display: flex;
+    align-items: center;
+    height: 80px;
+  }
+  
+  .imgContainer img {
+    width: 12rem;
+    margin-left: -40px;
+  }
+  
+  .linkContainer {
+    display: flex;
+    width: 14rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5vw;
+  }
+  
+  .linkHome,
+  .linkCrear {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  
+  .linkHome {
+    font-size: 15px;
+    color: #e1e1e1;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  .linkHome:focus,
+  .linkHome:hover {
+    color: #fff;
+  }
+  
+  .linkHome:focus:after,
+  .linkHome:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  .linkHome:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+  
+  .linkCrear {
+    font-size: 15px;
+    color: #e1e1e1;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  
+  .linkCrear:focus,
+  .linkCrear:hover {
+    color: #fff;
+  }
+  
+  .linkCrear:focus:after,
+  .linkCrear:hover:after {
+    width: 100%;
+    left: 0%;
+  }
+  
+  .linkCrear:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+  
+  /*social*/
+  
+  .links {
+    display: flex;
+    justify-content: space-evenly;
+    width: 150px;
+    align-items: center;
+    margin-bottom: 7px;
+    margin-left: 20px;
+  }
+  
+  .iconsSocialMedia {
+    align-items: center;
+    margin-top: 10px;
+    padding: 5px;
+    width: 32px;
+    cursor: pointer !important;
+    transition: 300ms all ease-in-out;
+    position: relative;
+  }
+  
+  .iconsSocialMedia:hover {
+    translate: -0px -10px;
+  }
+  
+  #linkedin,
+  #gmail,
+  #github {
+    transition: 300ms all ease-in-out;
+    clip-path: circle(65%);
+  }
+  
+  #linkedin:hover {
+    background-color: rgb(221, 157, 189);
+  }
+  
+  #gmail {
+    height: 35px;
+  }
+  
+  /*#github{
+    width: 50px;
+    height: auto;
+    background-color: red;
+  }*/
+  
+  #gmail:hover {
+    background-color: rgb(241, 96, 96);
+  }
+  
+  #github:hover {
+    background-color: rgb(196, 143, 245);
+  }
