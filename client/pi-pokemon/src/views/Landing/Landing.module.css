@@ -6,14 +6,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #06318d;
+  color: #ce6808;
   text-align: center;
 }
 
 .landingText {
   font-size: 4rem; /* Tamaño de fuente más grande */
   font-weight: bold; /* Texto en negrita para mayor énfasis */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto para hacerlo más visible */
+  text-shadow: 2px 2px 4px rgb(245, 238, 238); /* Sombra de texto para hacerlo más visible */
 }
 
 .content {
