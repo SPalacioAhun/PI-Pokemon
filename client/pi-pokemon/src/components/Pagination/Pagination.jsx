@@ -27,7 +27,7 @@ export default function Pagination({
                 className={style.buttonP}
                 style={
                   page === number
-                    ? { color: 'white' , background: "darkgrey" }
+                    ? { color: 'white' , background: "#F23030" }
                     : {}
                 }
                 onClick={() => pagination(number)}

@@ -1,5 +1,5 @@
 //import React from "react";
-import logo from "../../img-pk/gifsPokes/pokeballGif.gif";
+import logo from "../../img-pk/International_Pokémon_logo.svg.png";
 import style from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
@@ -19,12 +19,12 @@ const Navbar = () => {
         <Link className={style.linkCrear} to={"/create"}>
           Crearte
         </Link>
-        <Link className={style.linkCrear} to={"/about"}>
+        {/* <Link className={style.linkCrear} to={"/about"}>
           About
-        </Link>
+        </Link> */}
       </div>
       <SearchBar />
-      <div className={style.links}>
+      {/* <div className={style.links}>
         <a
           href="https://www.linkedin.com/in/jesus-re/"
           target="_blank"
@@ -111,7 +111,7 @@ const Navbar = () => {
             ></path>
           </svg>
         </a>
-      </div>
+      </div> */}
     </div>
   );
 };

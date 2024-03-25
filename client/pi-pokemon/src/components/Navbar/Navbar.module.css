@@ -6,8 +6,8 @@
   }
   
   .imgContainer img {
-    width: 12rem;
-    margin-left: -40px;
+    width: 12rem;  
+    margin-left: 0px;
   }
   
   .linkContainer {

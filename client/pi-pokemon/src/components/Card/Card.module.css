@@ -28,7 +28,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.4) 10px 20px 30px,
+  box-shadow: rgba(0, 0, 0, 0.9) 10px 20px 30px,
     rgba(0, 0, 0, 0.3) 10px 1px 53px 3px, rgba(1, 0, 0, 0.2) 0px -1px 3px inset;
   cursor: pointer;
   transition: all 0.9s;
@@ -39,7 +39,7 @@
 
 .cardContainer:hover {
   transform: scale(1.021);
-  background: #9a9a9a;
+  background: #F29F05;
 }
 
 .cardContainer:active {

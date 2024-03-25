@@ -11,13 +11,13 @@ import {
   filterByType,
   orderByHp
 } from "../../redux/actions";
-import { Link } from "react-router-dom";
+
 import style from "./Home.module.css";
 // componentes
-import Card from "../../components/Card/Card";
+import Cards from "../../components/Cards/Cards";
 import Pagination from "../../components/Pagination/Pagination";
 import Navbar from "../../components/Navbar/Navbar";
-import loading from "../../img-pk/gifsPokes/Mr.-Rime-Pokemon-PNG.gif";
+import loading from "../../img-pk/gifsPokes/pokeballGif.gif";
 import notFoundPs from "../../img-pk/gifsPokes/notFound.gif";
 
 const Home = () => {
@@ -160,35 +160,22 @@ const Home = () => {
         page={currentPage}
       />
       <div className={style.linkCard}>
-        {currentPokemons.length ? (
-          currentPokemons?.map((e, index) => {
-            return (
-              <Link key={index} className={style.card} to={`/detail/${e.id}`}>
-                <Card
-                  name={e.name}
-                  hp={e.hp}
-                  attack={e.attack}
-                  image={e.image}
-                  id={e.id}
-                  types={e.types}
-                  key={index}
-                />
-              </Link>
-            );
-          })
-        ) : notFound ? (
-          <div className={style.psydock}>
-            <p className={style.nF}>No existe pokemon con ese nombre</p>
-            <p className={style.signos}>¿?</p>
-              <img src={notFoundPs} alt="notFound" style={{width: 130}} />
-          </div>
-        ) : (
-          <div className={style.containerLoading}>
-            <img className={style.mime} src={loading} alt="Mr.Mime cargando" />
-            <p className={style.loading}>cargando...</p>
-          </div>
-        )}
-      </div>
+  {/* Solo renderiza una instancia de Cards */}
+  {currentPokemons.length ? (
+    <Cards dataPokemon={currentPokemons} />
+  ) : notFound ? (
+    <div className={style.psydock}>
+      <p className={style.nF}>No existe pokemon con ese nombre</p>
+      <p className={style.signos}>¿?</p>
+      <img src={notFoundPs} alt="notFound" style={{ width: 130 }} />
+    </div>
+  ) : (
+    <div className={style.containerLoading}>
+      <img className={style.mime} src={loading} alt="Mr.Mime cargando" />
+      <p className={style.loading}><strong>Cargando...</strong></p>
+    </div>
+  )}
+</div>
     </div>
   );
 };
