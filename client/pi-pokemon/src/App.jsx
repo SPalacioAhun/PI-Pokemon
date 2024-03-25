@@ -4,7 +4,7 @@ import Home from "./views/Home/Home";
 import Landing from "./views/Landing/Landing";
 import Detail from "./views/Detail/Detail";
 import Create from "./views/Create/Create";
-import AboutMe from "./views/AboutMe/AboutMe";
+
 
 function App() {
   return (
@@ -12,7 +12,6 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Landing />} />
         <Route exact path="/home" element={<Home />} />
-        <Route path="/about" element={<AboutMe />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/create" element={<Create />} />
       </Routes>
