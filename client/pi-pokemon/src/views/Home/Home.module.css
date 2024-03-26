@@ -31,12 +31,13 @@
 .azButton{
   width: 90px;
   height: 30px;
-  border: 3px solid #F23030;
+  border: 3px solid #267365e7;
   border-radius: 45px;
   transition: all 0.3s;
   cursor: pointer;
-  background: white;
+  background: #F23030;
   font-size: 0.9em;
+  color: whitesmoke;
   font-weight: 300;
   font-family: 'Montserrat', sans-serif;
   box-shadow: rgba(0, 0, 0, 0.4) 3px 8px 12px,
@@ -44,7 +45,7 @@
 }
 
 .azButton:hover {
-  background: #F23030;
+  background: #267365e7;
   color: white;
   font-size: 1em;
 }
@@ -52,12 +53,13 @@
 .typesButton{
   width: 80px;
   height: 30px;
-  border: 3px solid #F23030;
+  border: 3px solid #267365e7;
   border-radius: 45px;
   transition: all 0.3s;
   cursor: pointer;
-  background: white;
+  background: #F23030;
   font-size: 0.9em;
+  color: whitesmoke;
   font-weight: 300;
   font-family: 'Montserrat', sans-serif;
   box-shadow: rgba(0, 0, 0, 0.4) 3px 8px 12px,
@@ -65,7 +67,7 @@
 }
 
 .typesButton:hover {
-  background: #F23030;
+  background: #267365e7;
   color: white;
   font-size: 1em;
 }
@@ -73,12 +75,13 @@
 .attackButton{
   width: 80px;
   height: 30px;
-  border: 3px solid #F23030;
+  border: 3px solid #267365e7;
   border-radius: 45px;
   transition: all 0.3s;
   cursor: pointer;
-  background: white;
+  background: #F23030;
   font-size: 0.9em;
+  color: whitesmoke;
   font-weight: 300;
   font-family: 'Montserrat', sans-serif;
   box-shadow: rgba(0, 0, 0, 0.4) 3px 8px 12px,
@@ -86,7 +89,7 @@
 }
 
 .attackButton:hover {
-  background: #F23030;
+  background: #267365e7;
   color: white;
   font-size: 1em;
 }
@@ -94,12 +97,13 @@
 .origenButton{
   width: 80px;
   height: 30px;
-  border: 3px solid #F23030;
-  border-radius: 45px;
+  border: 3px solid #267365e7;
+  border-radius: 50px;
   transition: all 0.3s;
   cursor: pointer;
-  background: white;
+  background: #F23030;
   font-size: 0.9em;
+  color: whitesmoke;
   font-weight: 300;
   font-family: 'Montserrat', sans-serif;
   box-shadow: rgba(0, 0, 0, 0.4) 3px 8px 12px,
@@ -107,7 +111,7 @@
 }
 
 .origenButton:hover {
-  background: #F23030;
+  background: #267365e7;
   color: white;
   font-size: 1em;
 }
