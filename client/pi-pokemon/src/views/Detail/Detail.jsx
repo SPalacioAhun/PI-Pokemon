@@ -50,7 +50,7 @@ const Detail = () => {
     steel: "#5695A3",
     water: "#6493EB",
     grass: "#74CB48",
-    electric: "#F9CF30",
+    electric: "#F9CF30",   
     psychic: "#FB5584",
     ice: "#9AD6DF",
     dragon: "#7037FF",

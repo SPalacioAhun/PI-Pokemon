@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-//import React from "react";
 import style from '../Pagination/Pagination.module.css'
 
 export default function Pagination({
@@ -15,6 +14,7 @@ export default function Pagination({
   }
 
   return (
+    <>
     <nav>
       <ul className={style.pagination}>
         {pageNumbers &&
@@ -38,5 +38,10 @@ export default function Pagination({
           ))}
       </ul>
     </nav>
+
+    </>
   );
 }
+
+
+

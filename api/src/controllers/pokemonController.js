@@ -6,7 +6,7 @@ const getPokemonsApi = async () => {
     const api = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=200");
 
     const pokeApi = await api.data.results; //guardo la info en una constante para luego mapear y modificar segun la info de la url
-
+  
     const dataPokemon = pokeApi.map(async (pokemon) => {
       const info = await axios.get(pokemon.url);
       const i = info.data;
@@ -44,7 +44,7 @@ const getPokemonsDb = async () => {
       id: e.id,
       name: e.name,
       image: e.image,
-      types: e.Types.map((e) => e.name),
+      types: e.Types.map((e) => e.name),   
       hp: e.hp,
       attack: e.attack,
       defense: e.defense,
@@ -58,12 +58,12 @@ const getPokemonsDb = async () => {
 };
 
 const getAllPokemons = async (name) => {
-  //console.log('estoy en el controller', name);
+    
   const pokemonsDb = await getPokemonsDb();
-  const pokemonsApi = await getPokemonsApi();
+  const pokemonsApi = await getPokemonsApi();  
   const allPokemon = pokemonsDb.concat(pokemonsApi);
 
-  let pokemonName;
+  let pokemonName;  
   if (name) {
     pokemonName = allPokemon.filter(
       (e) => e.name.toLowerCase().includes(name.toLowerCase())

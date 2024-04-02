@@ -19,18 +19,7 @@ export const getPokemons = () => {
       const response = await axios.get("http://localhost:3001/pokemons/");
       return dispatch({ type: GET_POKEMONS, payload: response.data });
     } catch (error) {
-      if (error.response) {
-        // La solicitud fue hecha y el servidor respondió con un código de estado diferente de 2xx
-        console.log("Respuesta del servidor con error:", error.response.data);
-        console.log("Código de estado:", error.response.status);
-      } else if (error.request) {
-        // La solicitud fue hecha pero no se recibió respuesta
-        console.log("La solicitud fue realizada pero no se recibió respuesta:", error.request);
-      } else {
-        // Ocurrió un error durante la configuración de la solicitud
-        console.log("Error al configurar la solicitud:", error.message);
-      }
-      console.log("Error completo:", error.config);
+      console.log(error);
     }
   };
 };

@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className={style.navContainer}>
       <Link to={"/"}>
         <div className={style.imgContainer}>
-          <img src={logo} alt="logoPokeball" />
+          <img src={logo} alt="logoPokemon" />
         </div>
       </Link>
       <div className={style.linkContainer}>
@@ -17,7 +17,7 @@ const Navbar = () => {
           Home
         </Link>
         <Link className={style.linkCrear} to={"/create"}>
-          Crearte
+          Create
         </Link>
         
       </div>

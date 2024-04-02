@@ -39,15 +39,15 @@ const validate = (input) => {
       errors.defense = "No puede ser menor a 0";
     }
   
-    if (input.speed < 0) {
+    if (input.speed <= 0) {
       errors.speed = "No puede ser menor a 0";
     }
   
-    if (input.height < 0) {
+    if (input.height <= 0) {
       errors.height = "No puede ser menor a 0";
     }
   
-    if (input.weight < 0) {
+    if (input.weight <= 0) {
       errors.weight = "No puede ser menor a 0";
     }
   
@@ -82,38 +82,7 @@ const validate = (input) => {
   
     if (!errors.types) errors.types = [];
   
-    //if (input.types.length === 0) errors.types = "Debes elegir al menos 1 tipo";
-    //if (input.types.length > 2) errors.types = "No puedes elegir mas de 2 tipos";
-  
-    //if(!errors.types) {
-    //  if (input.types.length > 0 && input.types.length < 3) errors.types = [];
-    //}
-  
     
-  
-    //if (input.types.length ) {
-    //  errors.types = "Debes elegir al menos 1 tipo";
-    //}
-  
-    //if (input.types.length >= 1) {
-    //  errors.types = "No puedes elegir mas de 2 tipos";
-    //}
-  
-    //if(input.types.length===0) {       //OPCION 1 PERMITE CREAR
-    //  errors.types = "Debes elegir 1 o 2 tipo";
-    //} else if(input.types.length>2) {
-    //  errors.types = "No puedes elegir mas de 2 tipos";
-    //} else {
-    //  errors.types = [];
-    //}
-  
-    //errors.types = [];
-    //if(input.types.length>2) errors.types="No puedes elegir mas de 2 tipos";
-  
-    //if(input.types.length===1||input.types.length===2) errors.types=[];
-  
-    //if (input.types.length === 1 || input.types.length === 2) errors.types = [];
-    //si es correcto limpia los errores
   
     return errors;
   };
