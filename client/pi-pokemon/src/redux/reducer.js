@@ -136,6 +136,7 @@ const rootReducer = (state = initialState, action) => {
         pokemons: sortedHp,
       };
 
+
     default:
       return { ...state };
   }

@@ -12,6 +12,7 @@ export const FILTER_BY_TYPE = "FILTER_BY_TYPE";
 export const GET_DETAIL = "GET_DETAIL";
 export const CLEAR_DETAIL = "CLEAR_DETAIL";
 
+
 //ACTIONS
 export const getPokemons = () => {
   return async (dispatch) => {
@@ -33,7 +34,7 @@ export const createPokemons = (info) => {
         info
       );
       //console.log(response);
-      alert("Pokemon creado, Gran trabajo!");
+      alert("Pokemon creado!");
       return response;
     } catch (error) {
       console.error(error);
@@ -122,6 +123,8 @@ export const orderByHp = (payload) => {
     payload,
   };
 };
+
+
 
 
 

@@ -23,8 +23,8 @@
   }
   
   .imageGif img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     margin-top: 5px;
   }
   
@@ -79,9 +79,9 @@
   }
   
   .mime {
-    margin-top: 250px;
-    width: 100px;
-    height: 100px;
+  margin-top: 50px;
+  width: 300px;
+  height: 100px;
   }
   
   .contentDetail {
@@ -140,7 +140,7 @@
     }
   }
   
-  span {
+  .span {
     font-weight: 500;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -156,7 +156,6 @@
   }
   
   .pokemonType {
-    /*background: rgb(197, 24, 24);*/
     padding: 7px;
     margin-top: 15px;
     color: whitesmoke;
@@ -182,37 +181,31 @@
     width: 100px;
     align-items: center;
     justify-content: center;
-    background-color: #eeeeee4b;
-    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    color: whitesmoke;
+    border: 3px solid #267365e7;
+    border-radius: 50px;
     letter-spacing: 1px;
     transition: all 0.2s linear;
     cursor: pointer;
-    border: none;
-    background: #fff;
+    background: #F23030;
     margin-top: 50px;
-  }
-  
-  .buttonVolver > svg {
-    margin-right: 5px;
-    margin-left: 5px;
-    font-size: 20px;
-    transition: all 0.4s ease-in;
-  }
-  
-  .buttonVolver:hover > svg {
-    font-size: 1.2em;
-    transform: translateX(-5px);
+    
   }
   
   .buttonVolver:hover {
+    background-color: #267365;
     box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
     transform: translateY(-2px);
   }
   
   .spanBo {
     text-decoration: none;
-  }
+  } 
   
   .volverSpan {
+    font-size: 20px;
+    color: whitesmoke;
     margin-bottom: -9px;
   }

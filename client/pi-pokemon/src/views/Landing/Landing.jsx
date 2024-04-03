@@ -34,7 +34,7 @@ const Landing = () => {
         <h1 className={style.landingText}>El Pokemon perfecto no existe <br /> ¡Todos tienen algo especial!</h1>
         {!isGameEnabled && (
           <div>
-            <button onClick={() => setShowPopup(true)}>¡Comienza tu aventura Pokémon!</button>
+            <button className={style.button} onClick={() => setShowPopup(true)}>¡Comienza tu aventura Pokémon!</button>
             {showPopup && (
               <div className={style.welcomePopup}>
                 <div className={style.welcomePopupContent}>
@@ -46,7 +46,7 @@ const Landing = () => {
                   <p>¿Estamos Listos? </p>
                   
                   <Link to="/home">
-                    <button onClick={handleStartClick}>¡Atrévete a ser un Maestro Pokémon!</button>
+                    <button className={style.button} onClick={handleStartClick}>¡Atrévete a ser un Maestro Pokémon!</button>
                   </Link>
                 </div>
               </div>

@@ -59,9 +59,11 @@ const {
      res.status(400).json({ error: error.message });
    }
  };
+
+ 
  
  module.exports = {
    getPokemonsHandler,
    getPokemonsIdHandler,
-   createPokemonsHandler,
+   createPokemonsHandler
  };

@@ -24,3 +24,5 @@ const Card = ({ image, name, types, attack, hp, id}) => {
 };
 
 export default Card;
+
+
