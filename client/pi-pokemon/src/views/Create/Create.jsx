@@ -20,6 +20,8 @@ const Create = () => {
     defense: "",
     speed: "",
     types: [],
+    height: "", // Agregar estado para altura
+    weight: "", // Agregar estado para peso
   });
 
   useEffect(() => {
@@ -168,6 +170,7 @@ const Create = () => {
                 placeholder="HP"
                 name="hp"
                 type="number"
+                min="1"
                 value={input.hp}
                 onChange={handleChange}
               />
@@ -187,6 +190,7 @@ const Create = () => {
                 placeholder="Ataque"
                 name="attack"
                 type="number"
+                min="1"
                 value={input.attack}
                 onChange={handleChange}
               />
@@ -206,6 +210,7 @@ const Create = () => {
                 placeholder="Defensa"
                 name="defense"
                 type="number"
+                min="1"
                 value={input.defense}
                 onChange={handleChange}
               />
@@ -225,6 +230,7 @@ const Create = () => {
                 placeholder="Velocidad"
                 name="speed"
                 type="number"
+                min="1"
                 value={input.speed}
                 onChange={handleChange}
               />
@@ -244,6 +250,7 @@ const Create = () => {
                 placeholder="Altura"
                 name="height"
                 type="number"
+                min="1"
                 value={input.height}
                 onChange={handleChange}
               />
@@ -263,6 +270,7 @@ const Create = () => {
                 placeholder="Peso"
                 name="weight"
                 type="number"
+                min="1"
                 value={input.weight}
                 onChange={handleChange}
               />

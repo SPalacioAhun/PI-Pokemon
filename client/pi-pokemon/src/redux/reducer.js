@@ -49,6 +49,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         types: action.payload,
       };
+      
     case FILTER_CREATED:
       const createdFilter =
         action.payload === "created"
@@ -58,6 +59,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         pokemons: action.payload === "All" ? state.allPokemons : createdFilter,
       };
+
     case ORDER_BY_NAME:
       let sortedAll =
         action.payload === "asc"

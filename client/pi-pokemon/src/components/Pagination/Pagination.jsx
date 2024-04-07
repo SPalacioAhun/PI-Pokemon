@@ -14,7 +14,7 @@ export default function Pagination({
   }
 
   return (
-    <>
+    <div>
     <nav>
       <ul className={style.pagination}>
         {pageNumbers &&
@@ -39,7 +39,7 @@ export default function Pagination({
       </ul>
     </nav>
 
-    </>
+    </div>
   );
 }
 

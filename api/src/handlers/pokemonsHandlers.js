@@ -1,7 +1,7 @@
 const {
-   createPokemon,
-   getAllPokemons,
-   getPokemonsById,
+  getAllPokemons,
+  getPokemonsById,
+  createPokemon,
  } = require("../controllers/pokemonController");
  
  const getPokemonsHandler = async (req, res) => { 

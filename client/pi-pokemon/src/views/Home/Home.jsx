@@ -151,7 +151,7 @@ const Home = () => {
     <Cards dataPokemon={currentPokemons} />
   ) : notFound ? (
     <div className={style.psydock}>
-      <p className={style.nF}>No existe pokemon con ese nombre</p>
+      <p className={style.nF}>Ningún Pokémon coincide con tu búsqueda</p>
       <p className={style.signos}>¿?</p>
       <img src={notFoundPs} alt="notFound" style={{ width: 200 }} />
     </div>
