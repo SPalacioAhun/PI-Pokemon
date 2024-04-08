@@ -33,7 +33,7 @@ export const createPokemons = (info) => {
         "http://localhost:3001/pokemons/create",
         info
       );
-      //console.log(response);
+    
       alert("Pokemon creado!");
       return response;
     } catch (error) {
@@ -65,7 +65,10 @@ export const getNamePokemons = (name) => {
 export const getTypes = () => {
   return async (dispatch) => {
     let info = await axios.get("http://localhost:3001/types", {});
-    return dispatch({ type: GET_TYPES, payload: info.data });
+    return dispatch({ 
+      type: GET_TYPES, 
+      payload: info.data 
+    });
   };
 };
 

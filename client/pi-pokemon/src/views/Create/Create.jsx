@@ -20,8 +20,7 @@ const Create = () => {
     defense: "",
     speed: "",
     types: [],
-    height: "", // Agregar estado para altura
-    weight: "", // Agregar estado para peso
+    height: "", 
   });
 
   useEffect(() => {
@@ -34,7 +33,7 @@ const Create = () => {
   const disable = () => {
     let disabled = true;
     for (let error in errors) {
-      //console.log("soy error", error);
+      
       if (errors[error] === "" || errors[error].length === 0) disabled = false;
       else {
         disabled = true;
@@ -55,8 +54,8 @@ const Create = () => {
       defense: "",
       speed: "",
       types: [],
-      height: "", // Agregar estado para altura
-      weight: "", // Agregar estado para peso
+      height: "", 
+      weight: "", 
     });
   };
 
@@ -72,7 +71,7 @@ const Create = () => {
         [e.target.name]: e.target.value,
       })
     );
-    //console.log(input);
+    
   };
 
   const handleSelect = (e) => {

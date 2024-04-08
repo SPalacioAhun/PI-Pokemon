@@ -16,6 +16,9 @@ const Navbar = () => {
         <Link className={style.linkHome} to={"/home"}>
           Home
         </Link>
+        <Link className={style.linkCrear} to={"/about"}>
+          About
+        </Link>
         <Link className={style.linkCrear} to={"/create"}>
           Create
         </Link>

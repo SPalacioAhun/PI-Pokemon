@@ -24,7 +24,7 @@
   .linkContainer {
     display: flex;
     width: 14rem;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-left: 5vw;
   }
