@@ -1,4 +1,3 @@
-//import React from "react";
 import logo from "../../img-pk/International_Pokémon_logo.svg.png";
 import style from "./Navbar.module.css";
 import { Link } from "react-router-dom";

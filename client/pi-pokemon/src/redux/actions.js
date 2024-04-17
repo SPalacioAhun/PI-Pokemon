@@ -25,7 +25,7 @@ export const getPokemons = () => {
   };
 };
 
-
+// No esta en A-T
 export const createPokemons = (info) => {
   return async () => {
     try {

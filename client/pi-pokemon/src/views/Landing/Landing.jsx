@@ -1,21 +1,14 @@
-// import React from "react";
 import { Link } from "react-router-dom";
-// import fondo from "../../img-pk/pokemon-1601385_1280.jpg";
-
- import style from "./Landing.module.css";
-
-
- import { useState } from 'react';
-
-
+import { useState } from 'react';
+import style from "./Landing.module.css";
 
 
 const Landing = () => {
+  const [isLandingEnabled, setIsLandingEnabled] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [isGameEnabled, setIsGameEnabled] = useState(false);
 
-  const handleGameStart = () => {
-    setIsGameEnabled(true);
+  const handleLandingStart = () => {
+    setIsLandingEnabled(true);
   };
 
   const handleClosePopup = () => {
@@ -23,18 +16,25 @@ const Landing = () => {
   };
 
   const handleStartClick = () => {
-    handleGameStart();
+    handleLandingStart();
     handleClosePopup();
   };
 
   return (
-    <div className={style.landingBackground}> {/* Aplica la clase CSS para el fondo */}
+    <div className={style.landingBackground}>
      
       <div className={style.content}>
-        <h1 className={style.landingText}>El Pokemon perfecto no existe <br /> ¡Todos tienen algo especial!</h1>
-        {!isGameEnabled && (
+        <h1 className={style.landingText}>
+        El Pokemon perfecto no existe <br /> ¡Todos tienen algo especial!
+        </h1>
+        {!isLandingEnabled && (
           <div>
-            <button className={style.button} onClick={() => setShowPopup(true)}>¡Comienza tu aventura Pokémon!</button>
+            <button 
+            className={style.button} 
+            onClick={() => setShowPopup(true)}
+            >
+            ¡Comienza tu aventura Pokémon!
+            </button>
             {showPopup && (
               <div className={style.welcomePopup}>
                 <div className={style.welcomePopupContent}>
@@ -46,7 +46,12 @@ const Landing = () => {
                   <p>¿Estamos Listos? </p>
                   
                   <Link to="/home">
-                    <button className={style.button} onClick={handleStartClick}>¡Atrévete a ser un Maestro Pokémon!</button>
+                    <button 
+                    className={style.button} 
+                    onClick={handleStartClick}
+                    >
+                    ¡Atrévete a ser un Maestro Pokémon!
+                    </button>
                   </Link>
                 </div>
               </div>
@@ -59,3 +64,7 @@ const Landing = () => {
 };
 
 export default Landing;
+
+
+
+

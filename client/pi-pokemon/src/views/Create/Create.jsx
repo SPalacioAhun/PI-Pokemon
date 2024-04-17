@@ -20,7 +20,8 @@ const Create = () => {
     defense: "",
     speed: "",
     types: [],
-    height: "", 
+    height: "",
+    weight: "", 
   });
 
   useEffect(() => {
@@ -43,6 +44,7 @@ const Create = () => {
     return disabled;
   };
 
+  //Envio del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createPokemons(input));
@@ -59,21 +61,21 @@ const Create = () => {
     });
   };
 
+  //Cambia el valor de un campo
   const handleChange = (e) => {
     e.preventDefault();
+    const { name, value } = e.target;
     setInput({
-      ...input, //copia el estado como ya existe
-      [e.target.name]: e.target.value,
+      ...input,
+      [name]: value === "0" ? input[name] : value,
     });
-    setErrors(
-      validate({
-        ...input,
-        [e.target.name]: e.target.value,
-      })
-    );
-    
+    setErrors(validate({
+      ...input,
+      [name]: value === "0" ? input[name] : value,
+    }));
   };
 
+  //Selecciona un tipo 
   const handleSelect = (e) => {
     e.preventDefault();
     setInput({
@@ -169,7 +171,6 @@ const Create = () => {
                 placeholder="HP"
                 name="hp"
                 type="number"
-                min="1"
                 value={input.hp}
                 onChange={handleChange}
               />
@@ -189,7 +190,6 @@ const Create = () => {
                 placeholder="Ataque"
                 name="attack"
                 type="number"
-                min="1"
                 value={input.attack}
                 onChange={handleChange}
               />
@@ -209,7 +209,6 @@ const Create = () => {
                 placeholder="Defensa"
                 name="defense"
                 type="number"
-                min="1"
                 value={input.defense}
                 onChange={handleChange}
               />
@@ -229,7 +228,6 @@ const Create = () => {
                 placeholder="Velocidad"
                 name="speed"
                 type="number"
-                min="1"
                 value={input.speed}
                 onChange={handleChange}
               />
@@ -249,7 +247,6 @@ const Create = () => {
                 placeholder="Altura"
                 name="height"
                 type="number"
-                min="1"
                 value={input.height}
                 onChange={handleChange}
               />
@@ -269,7 +266,6 @@ const Create = () => {
                 placeholder="Peso"
                 name="weight"
                 type="number"
-                min="1"
                 value={input.weight}
                 onChange={handleChange}
               />

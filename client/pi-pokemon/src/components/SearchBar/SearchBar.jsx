@@ -14,7 +14,7 @@ const SearchBar = () => {
       setName(inputValue);
       setError("");
     } else {
-      setError("Solo se permiten letras.");
+      setError("No se permiten números.");
     }
   };
 

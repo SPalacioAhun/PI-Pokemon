@@ -15,29 +15,51 @@ const validate = (input) => {
     if (!input.hp) {
       errors.hp = "No puede estar vacio";
     }
+
+    if (input.hp > 255) {
+      errors.hp = "La vida no puede superar 255"
+    }
     
   
     if (input.attack === "") {
       errors.attack = "No puede estar vacio";
+    }
+
+    if (input.attack > 200) {
+      errors.attack = "El ataque no puede superar 200"
     }
   
     if (input.defense === "") {
       errors.defense = "No puede estar vacio";
     }
 
+    if (input.defense > 510) {
+      errors.defense = "La defensa no puede superar 510"
+    }
+
     if (input.speed === "") {
       errors.speed = " No puede estar vacio"
+    }
+
+    if (input.speed > 255) {
+      errors.speed = "La velocidad no puede superar 255"
     }
 
     if (input.height === "") {
       errors.height = " No puede estar vacio"
     }
 
+    if (input.height > 300) {
+      errors.height = "La altura no puede superar 300"
+    }
+
     if (input.weight === "") {
       errors.weight = " No puede estar vacio"
     }
   
-    
+    if (input.weight > 200) {
+      errors.weight = "El peso no puede superar 200"
+    }
   
     if (!/^([0-9])*$/.test(input.weight) && input.weight) {
       errors.weight = "Solo se permiten numeros positivos";
@@ -66,13 +88,12 @@ const validate = (input) => {
     if (input.types.length <= 0) {
       errors.types = "Debes elegir al menos 2 tipos";
     }
-    if (input.types.length >= 2) errors.types = "No puedes elegir mas de 2 tipos";
-  
+    
     if (!errors.types) errors.types = [];
   
+    return errors;
     
   
-    return errors;
   };
   
   export default validate;

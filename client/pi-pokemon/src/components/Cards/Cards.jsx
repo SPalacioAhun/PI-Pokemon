@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Card from "../Card/Card";
 import style from "../Cards/Cards.module.css"
 
-const Cards = ( {dataPokemon} ) => {
+const Cards = ({ dataPokemon }) => {
   return (
    <div>
     <div className={style.linkCard}>

@@ -97,9 +97,7 @@ const Detail = () => {
               backgroundColor: typesColors[detailPokemons[0]?.types[0]],
             }}
           >
-            <div
-              className={style.backgroundDetail}
-            >
+            <div className={style.backgroundDetail}>
               <img
                 className={style.imageDetail}
                 src={detailPokemons[0]?.image}
@@ -119,8 +117,8 @@ const Detail = () => {
                 <p>Tipo: </p>
                 {detailPokemons[0]?.types.join(" ")}
               </h3>
-              <div className={style.pokemonStats}>
               
+              <div className={style.pokemonStats}>
                 <p
                   style={{
                     backgroundColor: typesColors[detailPokemons[0]?.types[0]],

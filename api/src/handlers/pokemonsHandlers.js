@@ -18,6 +18,7 @@ const {
    }
  };
  
+ 
  const getPokemonsIdHandler = async (req, res) => {
    const { idPokemon } = req.params;
    try {
@@ -27,6 +28,7 @@ const {
      res.status(400).json({ error: error.message });
    }
  };
+
  
  const createPokemonsHandler = async (req, res) => {
    const {
@@ -38,7 +40,7 @@ const {
      speed = null,
      height = null,
      weight = null,
-     createdInDb = true, //no es necesario 
+     createdInDb = true, 
      types,
    } = req.body;
    try {

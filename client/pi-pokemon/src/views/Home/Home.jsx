@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
-// install react-redux
 import { useDispatch, useSelector } from "react-redux";
 import {
   getPokemons,
@@ -29,8 +28,8 @@ const Home = () => {
   //PAGINADO
   const [currentPage, setCurrentPage] = useState(1);
   const [pokemonsPerPage,] = useState(12);
-  const indexOfLastPokemon = currentPage * pokemonsPerPage; // 6
-  const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; // 0
+  const indexOfLastPokemon = currentPage * pokemonsPerPage; // 2*12=24
+  const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage; // 24-12=12
   const currentPokemons = allPokemons.slice(
     indexOfFirstPokemon,
     indexOfLastPokemon
@@ -43,14 +42,16 @@ const Home = () => {
   useEffect(() => {
     dispatch(getPokemons());
     dispatch(getTypes());
-    //dispatch
+    
   }, [dispatch]);
 
+  //recargar
   const handleClick = (e) => {
     e.preventDefault();
     dispatch(getPokemons());
   };
 
+  // A-Z Z-A
   const handleSort = (e) => {
     e.preventDefault();
     dispatch(orderByName(e.target.value));
@@ -58,11 +59,13 @@ const Home = () => {
     setOrden(`Ordenado ${e.target.value}`);
   };
 
+  //Creados - api
   const handleFilterCreated = (e) => {
     e.preventDefault();
     dispatch(filterCreated(e.target.value));
   };
 
+  //Ataque
   const handleSortAttack = (e) => {
     e.preventDefault();
     if (e.target.value !== "attack") dispatch(orderByAttack(e.target.value));
@@ -70,6 +73,7 @@ const Home = () => {
     setOrden(`Ordenado ${e.target.value}`);
   };
 
+  //Types
   const handleFilterTypes = (e) => {
     e.preventDefault();
     if (e.target.value !== "Tipos") {
@@ -77,9 +81,10 @@ const Home = () => {
     }
   };
 
+  //HP
   const handleSortHp = (e) => {
     e.preventDefault();
-    if (e.target.value !== "jp") dispatch(orderByHp(e.target.value));
+    if (e.target.value !== "hp") dispatch(orderByHp(e.target.value));
     setCurrentPage(1);
     setOrden(`Ordenado ${e.target.value}`);
   };
@@ -145,8 +150,8 @@ const Home = () => {
         pagination={pagination}
         page={currentPage}
       />
-      <div className={style.linkCard}>
-  {/* Solo renderiza una instancia de Cards */}
+  <div className={style.linkCard}>
+  
   {currentPokemons.length ? (
     <Cards dataPokemon={currentPokemons} />
   ) : notFound ? (

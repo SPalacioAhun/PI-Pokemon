@@ -22,6 +22,7 @@ let initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+    
     case GET_POKEMONS:
       return {
         ...state,
@@ -29,6 +30,7 @@ const rootReducer = (state = initialState, action) => {
         allPokemons: action.payload,
         notFound: false,
       };
+
     case GET_NAME_POKEMONS:
       if (action.payload.error) {
         return {
@@ -54,7 +56,7 @@ const rootReducer = (state = initialState, action) => {
       const createdFilter =
         action.payload === "created"
           ? state.allPokemons.filter((e) => e.createdInDb)
-          : state.allPokemons.filter((e) => !e.createdInDb);
+          : state.pokemons.filter((e) => !e.createdInDb);
       return {
         ...state,
         pokemons: action.payload === "All" ? state.allPokemons : createdFilter,
@@ -63,7 +65,7 @@ const rootReducer = (state = initialState, action) => {
     case ORDER_BY_NAME:
       let sortedAll =
         action.payload === "asc"
-          ? state.pokemons.sort((a, b) => {
+          ? state.pokemons.sort((a, b) => {  //asc
               if (a.name > b.name) {
                 return 1;
               }
@@ -72,7 +74,7 @@ const rootReducer = (state = initialState, action) => {
               }
               return 0;
             })
-          : state.pokemons.sort((a, b) => {
+          : state.pokemons.sort((a, b) => {  //desc
               if (a.name > b.name) {
                 return -1;
               }
@@ -87,7 +89,7 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case ORDER_BY_ATTACK:
-      let sortedAttack = [...state.allPokemons];
+      let sortedAttack = [...state.pokemons];
 
       if (action.payload === "min") {
         sortedAttack.sort((a, b) => a.attack - b.attack);
@@ -113,11 +115,13 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         pokemons: filterType,
       };
+
     case GET_DETAIL:
       return {
         ...state,
         detail: action.payload,
       };
+      
     case CLEAR_DETAIL:
       return {
         ...state,
@@ -125,7 +129,7 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case ORDER_BY_HP:
-      let sortedHp = [...state.allPokemons];
+      let sortedHp = [...state.pokemons];
 
       if (action.payload === "min") {
         sortedHp.sort((a, b) => a.hp - b.hp);
