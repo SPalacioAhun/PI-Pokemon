@@ -1,10 +1,16 @@
 const validate = (input) => {
     let errors = {};
     let regexImage = /^(http|https):\/\/[^\s]+(\.jpg|\.jpeg|\.png|\.gif)$/;
+
+    if (!/^[a-zA-Z\s]+$/.test(input.name)) {
+      errors.name = "No se permiten números en el nombre";
+    }
   
     if (!input.name) {
       errors.name = "Se requiere un nombre";
     }
+
+    
     if (input.name.length > 10) {
       errors.name = "Debe ser menor a 10 carácteres";
     }
@@ -84,6 +90,7 @@ const validate = (input) => {
     if (!/^([0-9])*$/.test(input.speed) && input.speed) {
       errors.speed = "Solo se permiten numeros positivos";
     }
+    
   
     if (input.types.length <= 0) {
       errors.types = "Debes elegir al menos 2 tipos";

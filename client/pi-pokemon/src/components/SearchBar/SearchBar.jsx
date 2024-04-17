@@ -10,13 +10,16 @@ const SearchBar = () => {
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
-    if (/^[A-Za-z]+$/.test(inputValue) || inputValue === "") {
+    const lastCharacter = inputValue.slice(-1); 
+  
+    if (lastCharacter.match(/[0-9]/)) {
+      setError("No se permiten números.");
+    } else {
       setName(inputValue);
       setError("");
-    } else {
-      setError("No se permiten números.");
     }
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
